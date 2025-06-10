@@ -17,6 +17,7 @@
 package model
 
 import (
+	"github.com/chaosblade-io/chaosblade-exec-os/exec/ccb"
 	"github.com/chaosblade-io/chaosblade-exec-os/exec/cpu"
 	"github.com/chaosblade-io/chaosblade-exec-os/exec/disk"
 	"github.com/chaosblade-io/chaosblade-exec-os/exec/file"
@@ -27,7 +28,7 @@ import (
 	"github.com/chaosblade-io/chaosblade-exec-os/exec/script"
 	"github.com/chaosblade-io/chaosblade-exec-os/exec/systemd"
 	"github.com/chaosblade-io/chaosblade-exec-os/exec/time"
-	"github.com/chaosblade-io/chaosblade-spec-go/spec"
+	"github.com/ithyl/chaosblade-spec-go/spec"
 )
 
 // GetAllExpModels returns the experiment model specs in the project.
@@ -44,5 +45,6 @@ func GetAllExpModels() []spec.ExpModelCommandSpec {
 		kernel.NewKernelInjectCommandSpec(),
 		systemd.NewSystemdCommandModelSpec(),
 		time.NewTimeCommandSpec(),
+		ccb.NewCcbCommandModelSpec(),
 	}
 }

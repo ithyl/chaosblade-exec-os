@@ -19,9 +19,9 @@ package cpu
 import (
 	"context"
 	"github.com/chaosblade-io/chaosblade-exec-os/exec"
-	"github.com/chaosblade-io/chaosblade-spec-go/channel"
-	"github.com/chaosblade-io/chaosblade-spec-go/log"
 	"github.com/containerd/cgroups"
+	"github.com/ithyl/chaosblade-spec-go/channel"
+	"github.com/ithyl/chaosblade-spec-go/log"
 	"github.com/shirou/gopsutil/cpu"
 	"strconv"
 	"time"

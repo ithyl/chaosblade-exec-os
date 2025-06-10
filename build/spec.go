@@ -17,6 +17,7 @@
 package main
 
 import (
+	"github.com/chaosblade-io/chaosblade-exec-os/exec/ccb"
 	"github.com/chaosblade-io/chaosblade-exec-os/exec/cpu"
 	"github.com/chaosblade-io/chaosblade-exec-os/exec/disk"
 	"github.com/chaosblade-io/chaosblade-exec-os/exec/file"
@@ -31,8 +32,8 @@ import (
 	"log"
 	"os"
 
-	"github.com/chaosblade-io/chaosblade-spec-go/spec"
-	"github.com/chaosblade-io/chaosblade-spec-go/util"
+	"github.com/ithyl/chaosblade-spec-go/spec"
+	"github.com/ithyl/chaosblade-spec-go/util"
 )
 
 // main creates the yaml file of the experiments in the project
@@ -59,6 +60,7 @@ func getModels() *spec.Models {
 		kernel.NewKernelInjectCommandSpec(),
 		systemd.NewSystemdCommandModelSpec(),
 		time.NewTimeCommandSpec(),
+		ccb.NewCcbCommandModelSpec(),
 	}
 	specModels := make([]*spec.Models, 0)
 	for _, modeSpec := range modelCommandSpecs {

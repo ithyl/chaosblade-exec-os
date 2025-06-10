@@ -6,7 +6,7 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/chaosblade-io/chaosblade-spec-go/log"
+	"github.com/ithyl/chaosblade-spec-go/log"
 
 	"github.com/chaosblade-io/chaosblade-exec-os/pkg/automaxprocs/cgroups"
 )

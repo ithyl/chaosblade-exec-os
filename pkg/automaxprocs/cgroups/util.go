@@ -3,7 +3,7 @@ package cgroups
 import (
 	"strings"
 
-	"github.com/chaosblade-io/chaosblade-spec-go/spec"
+	"github.com/ithyl/chaosblade-spec-go/spec"
 )
 
 const hostDefaultCgroupFsPath = "/sys/fs/cgroup/"

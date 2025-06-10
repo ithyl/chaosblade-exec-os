@@ -10,7 +10,7 @@ import (
 	"path/filepath"
 	"strconv"
 
-	"github.com/chaosblade-io/chaosblade-spec-go/log"
+	"github.com/ithyl/chaosblade-spec-go/log"
 )
 
 // CGroup represents the data structure for a Linux control group.

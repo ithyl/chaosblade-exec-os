@@ -24,7 +24,7 @@ import (
 	"github.com/chaosblade-io/chaosblade-exec-os/exec/network"
 	"github.com/chaosblade-io/chaosblade-exec-os/exec/process"
 	"github.com/chaosblade-io/chaosblade-exec-os/exec/script"
-	"github.com/chaosblade-io/chaosblade-spec-go/spec"
+	"github.com/ithyl/chaosblade-spec-go/spec"
 )
 
 // GetAllExpModels returns the experiment model specs in the project.

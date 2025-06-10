@@ -19,8 +19,8 @@ package exec
 import (
 	"context"
 	"fmt"
-	"github.com/chaosblade-io/chaosblade-spec-go/channel"
-	"github.com/chaosblade-io/chaosblade-spec-go/spec"
+	"github.com/ithyl/chaosblade-spec-go/channel"
+	"github.com/ithyl/chaosblade-spec-go/spec"
 	"strings"
 )
 

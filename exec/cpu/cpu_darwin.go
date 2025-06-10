@@ -18,7 +18,7 @@ package cpu
 
 import (
 	"context"
-	"github.com/chaosblade-io/chaosblade-spec-go/log"
+	"github.com/ithyl/chaosblade-spec-go/log"
 	"github.com/shirou/gopsutil/cpu"
 	"time"
 )

@@ -17,7 +17,7 @@
 package network
 
 import (
-	"github.com/chaosblade-io/chaosblade-spec-go/spec"
+	"github.com/ithyl/chaosblade-spec-go/spec"
 )
 
 type NetworkCommandSpec struct {

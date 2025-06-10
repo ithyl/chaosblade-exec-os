@@ -14,21 +14,42 @@
  * limitations under the License.
  */
 
-package network
+package ccb
 
 import (
 	"github.com/ithyl/chaosblade-spec-go/spec"
 )
 
-func NewNetworkCommandSpec() spec.ExpModelCommandSpec {
-	return &NetworkCommandSpec{
+type CcbCommandModelSpec struct {
+	spec.BaseExpModelCommandSpec
+}
+
+func NewCcbCommandModelSpec() spec.ExpModelCommandSpec {
+	return &CcbCommandModelSpec{
 		spec.BaseExpModelCommandSpec{
-			ExpActions: []spec.ExpActionCommandSpec{
-				NewDropActionSpec(),
-				NewDnsActionSpec(),
-				NewOccupyActionSpec(),
+			ExpFlags: []spec.ExpFlagSpec{
+				&spec.ExpFlag{
+					Name:   "ignore-not-found",
+					Desc:   "Ignore process that cannot be found",
+					NoArgs: true,
+				},
 			},
-			ExpFlags: []spec.ExpFlagSpec{},
+			ExpActions: []spec.ExpActionCommandSpec{
+				NewExecCommandActionCommandSpec(),
+			},
 		},
 	}
+}
+
+func (*CcbCommandModelSpec) Name() string {
+
+	return "ccbCommand"
+}
+
+func (*CcbCommandModelSpec) ShortDesc() string {
+	return "Command experiment"
+}
+
+func (*CcbCommandModelSpec) LongDesc() string {
+	return "Command experiment, for example, ls"
 }
