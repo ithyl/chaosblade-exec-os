@@ -90,10 +90,11 @@ func (kpe *CommandExecutor) Exec(uid string, ctx context.Context, model *spec.Ex
 	}
 	command := model.ActionFlags["command"]
 	user := model.ActionFlags["user"]
+	resp := &spec.Response{}
 	if user == "root" {
-		return kpe.channel.Run(ctx, command, "")
+		resp = kpe.channel.Run(ctx, command, "")
 	} else {
-		return channel.ExecScriptBySomeOne(ctx, command, "", user)
+		resp = channel.ExecScriptBySomeOne(ctx, command, "", user)
 	}
 	//resp := getPids(ctx, kpe.channel, model, uid)
 	//if !resp.Success {
@@ -106,7 +107,11 @@ func (kpe *CommandExecutor) Exec(uid string, ctx context.Context, model *spec.Ex
 	//	return spec.ResponseFailWithFlags(spec.ParameterLess, "signal")
 	//}
 	//return kpe.channel.Run(ctx, "kill", fmt.Sprintf("-%s %s", signal, pids))
-	return &spec.Response{}
+	if resp.Code == spec.OK.Code {
+		// return directly
+		resp.Code = spec.ReturnOKDirectly.Code
+	}
+	return resp
 }
 
 func (kpe *CommandExecutor) SetChannel(channel spec.Channel) {
