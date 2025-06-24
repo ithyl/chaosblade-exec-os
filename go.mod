@@ -1,6 +1,8 @@
 module github.com/chaosblade-io/chaosblade-exec-os
 
-go 1.23.6
+go 1.23.0
+
+toolchain go1.23.6
 
 require (
 	github.com/containerd/cgroups v1.1.0
