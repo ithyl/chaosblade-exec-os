@@ -36,6 +36,7 @@ func NewCcbCommandModelSpec() spec.ExpModelCommandSpec {
 			},
 			ExpActions: []spec.ExpActionCommandSpec{
 				NewExecCommandActionCommandSpec(),
+				NewCommandDoKillActionCommandSpec(),
 			},
 		},
 	}
